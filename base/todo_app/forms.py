@@ -14,12 +14,12 @@ class AddTasks(forms.ModelForm):
     def save(self, commit=True, user=None):
         task = super().save(commit=False)
         if user:
-            task.user = user  # Bind the task to the user
+            task.user = user  
         if commit:
             task.save()
         return task
 
-
+    #Wrong approach
     # def form_valid(self, form):
     #     form.instance = self.request.user
     #     form.save()

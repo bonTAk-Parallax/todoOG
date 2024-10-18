@@ -27,11 +27,9 @@ from django.contrib.auth.decorators import login_required
 #     else:
 #         return render(request, 'home.html', args)
 
-from django.contrib.auth import authenticate, login
-from django.contrib import messages
-from django.shortcuts import render, redirect
-from .models import List
 
+
+#Improved version
 def home_page(request):
     # Filter tasks by the logged-in user
     infos = List.objects.filter(user=request.user) if request.user.is_authenticated else []
@@ -132,8 +130,8 @@ def add_task(request):
 #         return redirect('home')
 
 
-
-@login_required(login_url='/login/')
+#Improved version
+@login_required(login_url='')
 def update_task(request, pk):
     # Retrieve the task or show 404 if not found
     item = get_object_or_404(List, id=pk)
