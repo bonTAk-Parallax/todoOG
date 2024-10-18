@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="{% url 'add_task' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <a class="btn btn-outline-info btn-md" href="{% url 'home' %}" role="button">Back</a>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+{%endblock%}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="jumbotron">
+        <h1 class="display-4" style="text-transform: capitalize;">{{record.task_name}}</h1>
+        <p class="lead">{{record.description}} </p>
+        {% if record.complete == True %} 
+            <hr class="my-4"><strong>Status</strong> : Completed
+        {%else%} 
+            <p><strong>Status</strong> : Incomplete</p>
+        {%endif%}
+        <p>  </p>
+        <p>{{record.created_at}} </p>
+        <a class="btn btn-primary btn-md" href="{% url 'home' %}" role="button">Back</a>
+        <a class="btn btn-warning btn-md" href="{% url 'update' record.id %}" role="button">Update</a>
+        <a class="btn btn-danger btn-md" href="{% url 'delete' record.id %}" role="button">Delete</a>
+  </div>
+
+{%endblock%}

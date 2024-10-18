@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+{% if user.is_authenticated %}
+    <h2><strong style="text-transform: capitalize;"> Welcome {{request.user}} </strong></h2>
+    <br>
+    {%if infos %}
+        <table class="table table-striped table-hover" style="background-color: rgb(127, 193, 255);">
+            
+            <thead>
+              <tr>
+                <th scope="col">Task_ID</th>
+                <th scope="col">Task</th>
+                <th scope="col">Description</th>
+                <th scope="col">Created_At</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+                    {%for info in infos %}
+
+                        <tr>
+                            <td><a href="{% url 'info' info.id %}" style="color: rgb(0, 0, 0);">{{info.id}} </a></td>
+                            <td style="text-transform: capitalize;">{{info.task_name}} </td>
+                            <td>{{info.description}} </td>
+                            <td>{{info.created_at}} </td>
+                            {% if info.complete == True %} 
+                                <td>Completed</td>
+                            {%else%}
+                                <td>Incomplete</td>
+                            {%endif%}
+                        </tr>
+                    {%endfor%}
+                
+            </tbody>
+        </table>
+    {%else%}
+    <br>
+        <h4>No Items found on your todo list.....</h4>
+    {%endif%}
+{%else%}
+
+    <div class="col-md-6 offset-md-3">
+        <h2><strong>Login</strong></h2>
+        <br>
+        <form action="{% url 'home' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+
+            <input type="text" class="form-control"  placeholder="Username" name="username" required>
+            </div>
+            <div class="form-group">
+                
+            <input type="password" class="form-control"  placeholder="Password" name="password" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-outline-info">Login</button>
+        </form>
+    </div>
+{%endif%}
+
+{%endblock%}
+
+
+<!-- {% if forms.errors %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    Your Form Has Errors 
+    {% for field in form %}
+        {%if fields.errors %}
+            {{field.errors}}
+        {%endif%}
+    {%endfor%}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{%endif%}
+{{form.as_p}} -->
