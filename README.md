@@ -46,11 +46,11 @@ Pre-requisite: Have a GitHub account and GIT installed.
 To use GIT from CLI:
 
     • Check the current status of files     :  	git status
-    • Add the files to be tracked:          :   git add –all
+    • Add the files to be tracked:          :       git add –all
     • Commit the changes                    :  	git commit -m “__msg__”
     • Push the changes to repository        :  	Make a repository in GitHub, copy the 'git remote add origin.....' cmd and paste it in CLI of vs-code
-                                                Link you GitHub account to VS-code 
-                                                Run cmd:  git push origin main
+                                                    Link your GitHub account to VS-code 
+                                                    Run cmd:  git push origin main
     • Add, commit and push/publish again as you make new changes along the way.
 
 Note: Might need to identify yourself, just use 
