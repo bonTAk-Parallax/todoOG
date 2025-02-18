@@ -1,15 +1,10 @@
 ToDo App 
 
-Built a todo app using Django for basic learning purposes. 
-The app has an user registration, authentication/authorization and guest user system.
-Along with basic CRUD functionality for both the tasks todo and users at hand.
-Learned GIT and GitHub along the way as well.
-The project will have multiple other functionalities and apps in the future like user groups, group specific tasks and real time chat among user.
-This is all in the future though, now I be documenting every minute detail/s and steps required for it's creation. Wish me luck.
-(OS used: Linux Mint)
+Built a todo app using Django for basic learning purposes. The app has an user registration, authentication/authorization and guest user system. Along with basic CRUD functionality for both the tasks todo and users at hand. Learned GIT and GitHub along the way as well. The project will have multiple other functionalities and apps in the future like user groups, group specific tasks and real time chat among user. This is all in the future though, now I be documenting every minute detail/s and steps required for it's creation. Wish me luck. (OS used: Linux Mint)
 
 
 Django setup:
+
     • Create a folder and open it in Vs-code
       Go to the terminal 
       
@@ -20,9 +15,7 @@ Django setup:
       source .venv/bin/activate
 
 
-Why? To isolate the project from other Django projects/dependencies to avoid clash between the packages. Some project might require different packages, old version of Django
-and it's global installation might affect other ones that prefer the latest version. That is just one basic reason I mentioned, to have an 
-in-depth knowledge regarding it, refer to https://dev.to/sarahhudaib/why-virtualenv-is-important-for-django-development-58fp .
+Why? To isolate the project from other Django projects/dependencies to avoid clash between the packages. Some project might require different packages, old version of Django and it's global installation might affect other ones that prefer the latest version. That is just one basic reason I mentioned, to have an in-depth knowledge regarding it, refer to https://dev.to/sarahhudaib/why-virtualenv-is-important-for-django-development-58fp .
 
 
     • Django installation inside the venv:
@@ -42,6 +35,7 @@ Note: An project may have various apps for multiple use cases. Lets take Faceboo
 
 
 Using GIT, the easy way:
+
 Pre-requisite: Have a GitHub account and GIT installed.
 
     • Go to source control in vs-code and initialize the repository.
@@ -50,6 +44,7 @@ Pre-requisite: Have a GitHub account and GIT installed.
     • Now all the git functions can be used from source control using GUI.
 
 To use GIT from CLI:
+
     • Check the current status of files     :  	git status
     • Add the files to be tracked:          :   git add –all
     • Commit the changes                    :  	git commit -m “__msg__”
@@ -58,6 +53,6 @@ To use GIT from CLI:
                                                 Run cmd:  git push origin main
     • Add, commit and push/publish again as you make new changes along the way.
 
-Note: Might need to identify yourself, just use   
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
+Note: Might need to identify yourself, just use 
+( git config --global user.email "you@example.com" ) and 
+( git config --global user.name "Your Name" )
